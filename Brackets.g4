@@ -9,14 +9,14 @@ grammar Brackets;
 
 // Parser rules
 brackets
-    : balance EOF
+    : balance* EOF
     ;
 
 balance
-    : '(' balance ')'
-    | '[' balance ']'
-    | '{' balance '}'
-    |           // empty: no tokens at all
+    : '(' balance* ')'
+    | '[' balance* ']'
+    | '{' balance* '}'
+    //|           // empty: no tokens at all
     ;
 
 
